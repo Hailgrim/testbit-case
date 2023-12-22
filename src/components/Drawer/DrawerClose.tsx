@@ -1,8 +1,10 @@
-import styled from "styled-components";
+import styled from 'styled-components';
 
-import { ReactComponent as CloseIcon } from "../../assets/close.svg";
+import { ReactComponent as CloseIcon } from '../../assets/close.svg';
 
-const DrawerClose: React.FC<React.ButtonHTMLAttributes<HTMLButtonElement>> = (props) => {
+const DrawerClose: React.FC<React.ButtonHTMLAttributes<HTMLButtonElement>> = (
+  props
+) => {
   return (
     <DrawerCloseStyled {...props}>
       <CloseIcon />

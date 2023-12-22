@@ -1,9 +1,9 @@
-import React from "react";
+import React from 'react';
 
-import useT from "../../hooks/useT";
-import { ITransaction, ITableColumn, IUser } from "../../lib/types";
-import Table from "../Table/Table";
-import { formatDate } from "../../lib/functions";
+import useT from '../../hooks/useT';
+import { ITransaction, ITableColumn, IUser } from '../../lib/types';
+import Table from '../Table/Table';
+import { formatDate } from '../../lib/functions';
 
 const UserOperationsTable: React.FC<{
   user: IUser;
@@ -18,12 +18,13 @@ const UserOperationsTable: React.FC<{
       {
         key: 'type',
         name: t.type,
-        value: item => item.type === 'REPLENISH' ? t.withdrawal : t.depositing,
+        value: (item) =>
+          item.type === 'REPLENISH' ? t.withdrawal : t.depositing,
       },
       {
         key: 'amount',
         name: t.sum,
-        value: item => (
+        value: (item) => (
           <span className={item.type === 'REPLENISH' ? 'error' : 'success'}>
             {item.type === 'REPLENISH' ? '-' : '+'}
             {`${item.amount} ${user.subscription.plan.currency}`}
@@ -33,7 +34,11 @@ const UserOperationsTable: React.FC<{
       {
         key: 'created_at',
         name: t.date,
-        value: item => formatDate({ date: new Date(item.created_at), locale: t.localeCode}).replace(', ', ',\r\n'),
+        value: (item) =>
+          formatDate({
+            date: new Date(item.created_at),
+            locale: t.localeCode,
+          }).replace(', ', ',\r\n'),
       },
     ];
   }, [t, user]);

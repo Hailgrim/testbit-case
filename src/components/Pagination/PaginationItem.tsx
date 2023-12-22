@@ -1,5 +1,5 @@
-import styled from "styled-components";
-import theme from "../../lib/theme";
+import styled from 'styled-components';
+import theme from '../../lib/theme';
 
 const PaginationItem = styled.button<{
   $active?: boolean;
@@ -10,10 +10,11 @@ const PaginationItem = styled.button<{
   border: none;
   font-size: 1.4rem;
   color: inherit;
-  cursor: ${props => props.$active ? 'default' : 'pointer'};
-  background-color: ${props => props.$active ? 'var(--color-blue2)' : 'transparent'};
+  cursor: ${(props) => (props.$active ? 'default' : 'pointer')};
+  background-color: ${(props) =>
+    props.$active ? 'var(--color-blue2)' : 'transparent'};
   transition: background-color ease-out 0.2s;
-  visibility: ${props => props.$hide ? 'hidden' : 'visible'};
+  visibility: ${(props) => (props.$hide ? 'hidden' : 'visible')};
   & > svg {
     width: 1.2rem;
     height: 1.2rem;

@@ -1,6 +1,6 @@
-import styled from "styled-components";
+import styled from 'styled-components';
 
-import theme from "../../lib/theme";
+import theme from '../../lib/theme';
 
 const Subtitle = styled.h2`
   font-size: 1.8rem;

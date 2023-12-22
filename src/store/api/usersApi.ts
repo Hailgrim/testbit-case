@@ -7,10 +7,9 @@ const usersApi = createApi({
     baseUrl: 'https://test.gefara.xyz/api/v1/',
   }),
   tagTypes: ['Users', 'User'],
-  endpoints: builder => ({
-
+  endpoints: (builder) => ({
     getUsers: builder.query<IResList<IUser>, IReqListParams>({
-      query: params => ({
+      query: (params) => ({
         url: 'user/list',
         method: 'GET',
         params,
@@ -19,13 +18,12 @@ const usersApi = createApi({
     }),
 
     getUserTransactions: builder.query<ITransaction[], string>({
-      query: id => ({
+      query: (id) => ({
         url: `user/${id}/transactions`,
         method: 'GET',
       }),
       providesTags: () => ['User'],
     }),
-
   }),
 });
 

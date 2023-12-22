@@ -1,9 +1,9 @@
-import React from "react";
+import React from 'react';
 
-import Drawer from "../Drawer/Drawer";
-import User from "../User/User";
-import { IUser } from "../../lib/types";
-import UsersList from "./UsersList";
+import Drawer from '../Drawer/Drawer';
+import User from '../User/User';
+import { IUser } from '../../lib/types';
+import UsersList from './UsersList';
 
 const Users: React.FC = () => {
   const [drawer, setDrawer] = React.useState(false);

@@ -1,6 +1,6 @@
-import styled from "styled-components";
+import styled from 'styled-components';
 
-import theme from "../../lib/theme";
+import theme from '../../lib/theme';
 
 const UserTitle = styled.h6`
   font-size: 2rem;

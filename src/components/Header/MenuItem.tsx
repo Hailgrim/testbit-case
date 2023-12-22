@@ -1,6 +1,6 @@
-import styled from "styled-components";
+import styled from 'styled-components';
 
-import theme from "../../lib/theme";
+import theme from '../../lib/theme';
 
 const MenuItem: React.FC<{
   href: string;

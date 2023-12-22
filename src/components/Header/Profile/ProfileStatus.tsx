@@ -1,4 +1,4 @@
-import styled from "styled-components";
+import styled from 'styled-components';
 
 const ProfileStatus = styled.div`
   font-size: 1.2rem;

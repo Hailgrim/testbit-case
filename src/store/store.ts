@@ -1,4 +1,4 @@
-import {configureStore} from '@reduxjs/toolkit';
+import { configureStore } from '@reduxjs/toolkit';
 // import { setupListeners } from '@reduxjs/toolkit/dist/query/react';
 
 import usersApi from './api/usersApi';
@@ -9,7 +9,7 @@ const store = configureStore({
     [appSliceName]: appSlice,
     [usersApi.reducerPath]: usersApi.reducer,
   },
-  middleware: getDefaultMiddleware => {
+  middleware: (getDefaultMiddleware) => {
     return getDefaultMiddleware().concat(usersApi.middleware);
   },
 });

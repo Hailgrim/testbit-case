@@ -1,9 +1,9 @@
-import styled from "styled-components";
+import styled from 'styled-components';
 
-import Logo from "./Logo";
-import Menu from "./Menu";
-import Profile from "./Profile/Profile";
-import theme from "../../lib/theme";
+import Logo from './Logo';
+import Menu from './Menu';
+import Profile from './Profile/Profile';
+import theme from '../../lib/theme';
 
 const Header: React.FC = () => {
   return (

@@ -1,14 +1,14 @@
-import styled from "styled-components";
-import React from "react";
+import styled from 'styled-components';
+import React from 'react';
 
-import { ITable } from "../../lib/types";
-import { createTableData } from "../../lib/functions";
-import useT from "../../hooks/useT";
-import { ReactComponent as EditIcon } from "../../assets/edit.svg";
-import { ReactComponent as TrashIcon } from "../../assets/trash.svg";
-import TableButton from "./TableButton";
-import TableBody from "./TableBody";
-import theme from "../../lib/theme";
+import { ITable } from '../../lib/types';
+import { createTableData } from '../../lib/functions';
+import useT from '../../hooks/useT';
+import { ReactComponent as EditIcon } from '../../assets/edit.svg';
+import { ReactComponent as TrashIcon } from '../../assets/trash.svg';
+import TableButton from './TableButton';
+import TableBody from './TableBody';
+import theme from '../../lib/theme';
 
 export default function TableRows<T>({
   columns,
@@ -18,7 +18,10 @@ export default function TableRows<T>({
   onEdit,
   onDelete,
 }: ITable<T>) {
-  const rows = React.useMemo(() => createTableData<T>(columns, data), [columns, data]);
+  const rows = React.useMemo(
+    () => createTableData<T>(columns, data),
+    [columns, data]
+  );
   const t = useT();
 
   const colCounter = React.useMemo(() => {
@@ -26,13 +29,13 @@ export default function TableRows<T>({
     if (onEdit || onDelete) {
       counter++;
     }
-    counter += columns.filter(column => !column.hide).length;
+    counter += columns.filter((column) => !column.hide).length;
     return counter || 1;
   }, [columns, onEdit, onDelete]);
 
   return (
     <TableBody $loading={loading}>
-      {rows.map(row => (
+      {rows.map((row) => (
         <tr key={`tr.${row.key}`}>
           {row.values.map((item, itemIndex) => (
             <TdStyled key={`td.${row.key}.${itemIndex}`}>{item}</TdStyled>
@@ -58,13 +61,16 @@ export default function TableRows<T>({
           <TdStyled colSpan={colCounter}>
             {loading === true && t.loading}
             {error === true && t.error}
-            {loading !== true && error !== true && rows.length === 0 && t.nothingFound}
+            {loading !== true &&
+              error !== true &&
+              rows.length === 0 &&
+              t.nothingFound}
           </TdStyled>
         </tr>
       )}
     </TableBody>
   );
-};
+}
 
 const TdStyled = styled.td`
   font-size: 1.2rem;

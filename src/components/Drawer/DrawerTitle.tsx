@@ -1,5 +1,6 @@
-import styled from "styled-components";
-import theme from "../../lib/theme";
+import styled from 'styled-components';
+
+import theme from '../../lib/theme';
 
 const DrawerTitle = styled.h6`
   font-size: 1.8rem;

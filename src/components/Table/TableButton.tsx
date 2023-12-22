@@ -1,9 +1,11 @@
-import styled from "styled-components";
+import styled from 'styled-components';
 
-const TableButton: React.FC<React.ButtonHTMLAttributes<HTMLButtonElement> & {
-  icon: React.ReactNode;
-  children?: React.ReactNode;
-}> = ({ icon, children, ...props }) => {
+const TableButton: React.FC<
+  React.ButtonHTMLAttributes<HTMLButtonElement> & {
+    icon: React.ReactNode;
+    children?: React.ReactNode;
+  }
+> = ({ icon, children, ...props }) => {
   return (
     <ButtonStyled {...props}>
       {icon}

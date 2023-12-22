@@ -1,11 +1,11 @@
-import React from "react";
+import React from 'react';
 
-import PaginationItem from "./PaginationItem";
-import { ReactComponent as ArrowLeftIcon } from "../../assets/arrow-narrow-left.svg";
-import { ReactComponent as ArrowRightIcon } from "../../assets/arrow-narrow-right.svg";
-import { createPagination } from "../../lib/functions";
-import useT from "../../hooks/useT";
-import PaginationContainer from "./PaginationContainer";
+import PaginationItem from './PaginationItem';
+import { ReactComponent as ArrowLeftIcon } from '../../assets/arrow-narrow-left.svg';
+import { ReactComponent as ArrowRightIcon } from '../../assets/arrow-narrow-right.svg';
+import { createPagination } from '../../lib/functions';
+import useT from '../../hooks/useT';
+import PaginationContainer from './PaginationContainer';
 
 const Pagination: React.FC<{
   quantity?: number;
@@ -15,7 +15,7 @@ const Pagination: React.FC<{
 }> = ({ quantity = 1, current = 1, tiny, onPageChange }) => {
   const pages = React.useMemo(
     () => createPagination(quantity, current, tiny),
-    [quantity, current, tiny],
+    [quantity, current, tiny]
   );
   const t = useT();
 
@@ -31,8 +31,8 @@ const Pagination: React.FC<{
           <ArrowLeftIcon />
         </PaginationItem>
       )}
-      {quantity > 1
-        ? pages.map(page => (
+      {quantity > 1 ? (
+        pages.map((page) => (
           <PaginationItem
             key={page.value}
             $active={page.value === current}
@@ -43,8 +43,11 @@ const Pagination: React.FC<{
             {page.key}
           </PaginationItem>
         ))
-        : <PaginationItem $hide disabled>&nbsp;</PaginationItem>
-      }
+      ) : (
+        <PaginationItem $hide disabled>
+          &nbsp;
+        </PaginationItem>
+      )}
       {!tiny && (
         <PaginationItem
           $hide={current >= quantity}

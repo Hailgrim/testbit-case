@@ -1,4 +1,4 @@
-import { IPaginationItem, ITableColumn, ITableRow } from "./types";
+import { IPaginationItem, ITableColumn, ITableRow } from './types';
 
 /**
  * Creates an array with data values
@@ -6,7 +6,10 @@ import { IPaginationItem, ITableColumn, ITableRow } from "./types";
  * @param {T[]} data Consumed data
  * @returns {ITableRow<T>[]} Array with data values
  */
-export const createTableData = <T = unknown>(columns: ITableColumn<T>[], data?: T[]): ITableRow<T>[] => {
+export const createTableData = <T = unknown>(
+  columns: ITableColumn<T>[],
+  data?: T[]
+): ITableRow<T>[] => {
   let primaryKey: string | null = null;
 
   // Check the presence of the primary key
@@ -18,27 +21,34 @@ export const createTableData = <T = unknown>(columns: ITableColumn<T>[], data?: 
 
   return data
     ? data.map((item, index) => {
-      const row: ITableRow<T> = { key: String(index), data: item, values: [] };
+        const row: ITableRow<T> = {
+          key: String(index),
+          data: item,
+          values: [],
+        };
 
-      if (item instanceof Object) {
-        // Set the primary key value
-        if (primaryKey && primaryKey in item) {
-          row.key = String(item[primaryKey as keyof typeof item]).concat(String(index));
-        }
-
-        // Get data values
-        for (const column of columns) {
-          if (!column.hide && String(column.key) in item) {
-            row.values.push(column.value
-              ? column.value(item)
-              : String(item[column.key as keyof typeof item])
+        if (item instanceof Object) {
+          // Set the primary key value
+          if (primaryKey && primaryKey in item) {
+            row.key = String(item[primaryKey as keyof typeof item]).concat(
+              String(index)
             );
           }
-        }
-      }
 
-      return row;
-    })
+          // Get data values
+          for (const column of columns) {
+            if (!column.hide && String(column.key) in item) {
+              row.values.push(
+                column.value
+                  ? column.value(item)
+                  : String(item[column.key as keyof typeof item])
+              );
+            }
+          }
+        }
+
+        return row;
+      })
     : [];
 };
 
@@ -95,7 +105,11 @@ export const formatDate = (args: {
  * @param {boolean} tiny Creates a tiny pagination array
  * @returns {IPaginationItem[]} Array with page numbers
  */
-export const createPagination = (quantity: number, current: number, tiny?: boolean): IPaginationItem[] => {
+export const createPagination = (
+  quantity: number,
+  current: number,
+  tiny?: boolean
+): IPaginationItem[] => {
   const all = quantity > 0 ? quantity : 1;
   const curr = current > 0 && current < all + 1 ? current : 1;
   const borders = tiny ? 1 : 2;
@@ -116,7 +130,7 @@ export const createPagination = (quantity: number, current: number, tiny?: boole
     if (difference > 1) {
       list.unshift({
         key: difference > 2 ? '...' : 2,
-        value: list[0].value + 1 >> 1,
+        value: (list[0].value + 1) >> 1,
       });
     }
 
@@ -129,7 +143,7 @@ export const createPagination = (quantity: number, current: number, tiny?: boole
     if (difference > 1) {
       list.push({
         key: difference > 2 ? '...' : all - 1,
-        value: all + list[list.length - 1].value >> 1,
+        value: (all + list[list.length - 1].value) >> 1,
       });
     }
 
@@ -147,7 +161,7 @@ export const createPagination = (quantity: number, current: number, tiny?: boole
 export const createShortNumber = (num: number): string => {
   let result = String(num);
   if (num > 999999) {
-    result = `${Math.round(num / 1000000)}KK`;
+    result = `${(Math.round(num / 100000) / 10).toFixed(1)}KK`;
   } else if (num > 9999) {
     result = `${Math.round(num / 1000)}K`;
   }

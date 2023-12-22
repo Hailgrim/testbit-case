@@ -1,5 +1,6 @@
-import styled from "styled-components";
-import theme from "../../lib/theme";
+import styled from 'styled-components';
+
+import theme from '../../lib/theme';
 
 const DrawerHeader = styled.div`
   display: flex;

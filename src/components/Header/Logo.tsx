@@ -1,14 +1,12 @@
-import styled from "styled-components";
+import styled from 'styled-components';
 
-import useT from "../../hooks/useT";
-import theme from "../../lib/theme";
+import useT from '../../hooks/useT';
+import theme from '../../lib/theme';
 
 const Logo: React.FC = () => {
   const t = useT();
 
-  return (
-    <LogoStyled>{t.siteName}</LogoStyled>
-  );
+  return <LogoStyled>{t.siteName}</LogoStyled>;
 };
 export default Logo;
 

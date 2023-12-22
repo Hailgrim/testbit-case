@@ -1,16 +1,18 @@
-import styled from "styled-components";
+import styled from 'styled-components';
 
-import MenuItem from "./MenuItem";
-import { ReactComponent as CaseIcon } from "../../assets/case.svg";
-import useT from "../../hooks/useT";
-import theme from "../../lib/theme";
+import MenuItem from './MenuItem';
+import { ReactComponent as CaseIcon } from '../../assets/case.svg';
+import useT from '../../hooks/useT';
+import theme from '../../lib/theme';
 
 const Menu: React.FC = () => {
   const t = useT();
 
   return (
     <MenuStyled>
-      <MenuItem href="/" logo={<CaseIcon />}>{t.myOrganization}</MenuItem>
+      <MenuItem href="/" logo={<CaseIcon />}>
+        {t.myOrganization}
+      </MenuItem>
     </MenuStyled>
   );
 };

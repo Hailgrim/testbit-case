@@ -1,19 +1,21 @@
-import styled from "styled-components";
+import styled from 'styled-components';
 
-import { ITable } from "../../lib/types";
-import useT from "../../hooks/useT";
-import TableHeadCell from "./TableHeadCell";
+import { ITable } from '../../lib/types';
+import useT from '../../hooks/useT';
+import TableHeadCell from './TableHeadCell';
 
-export default function TableHead<T>(
-  { columns, onEdit, onDelete }: Omit<ITable<T>, 'data' | 'loading'>
-) {
+export default function TableHead<T>({
+  columns,
+  onEdit,
+  onDelete,
+}: Omit<ITable<T>, 'data' | 'loading'>) {
   const t = useT();
 
   return (
     <thead>
       <tr>
-        {columns.map((column, index) => !column.hide
-          ? (
+        {columns.map((column, index) =>
+          !column.hide ? (
             <ThStyled key={`th.${String(column.key)}.${index}`}>
               <TableHeadCell
                 sortable={column.sortable}
@@ -22,8 +24,7 @@ export default function TableHead<T>(
                 text={column.name || String(column.key)}
               />
             </ThStyled>
-          )
-          : undefined
+          ) : undefined
         )}
         {(onEdit || onDelete) && (
           <ThStyled>
@@ -33,7 +34,7 @@ export default function TableHead<T>(
       </tr>
     </thead>
   );
-};
+}
 
 const ThStyled = styled.th`
   background-color: var(--color-black);

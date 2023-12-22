@@ -1,7 +1,8 @@
-import styled from "styled-components";
-import theme from "../../lib/theme";
+import styled from 'styled-components';
 
-const DrawerContent = styled.div<{ $open?: boolean; }>`
+import theme from '../../lib/theme';
+
+const DrawerContent = styled.div<{ $open?: boolean }>`
   position: absolute;
   top: 0;
   right: 0;
@@ -12,8 +13,10 @@ const DrawerContent = styled.div<{ $open?: boolean; }>`
   padding-inline: 1.6rem;
   display: flex;
   flex-direction: column;
-  transform: translateX(${props => props.$open ? '0%' : '100%'});
-  animation: ${props => props.$open ? 'slide-left-open' : 'slide-left-close'} ease-out 0.2s;
+  transform: translateX(${(props) => (props.$open ? '0%' : '100%')});
+  animation: ${(props) =>
+      props.$open ? 'slide-left-open' : 'slide-left-close'}
+    ease-out 0.2s;
   @keyframes slide-left-open {
     from {
       transform: translateX(100%);
