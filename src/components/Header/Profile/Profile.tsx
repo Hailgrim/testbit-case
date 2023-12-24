@@ -1,4 +1,4 @@
-import { ReactComponent as AvatarIcon } from '../../../../assets/default-avatar.svg';
+import { ReactComponent as AvatarIcon } from '../../../assets/default-avatar.svg';
 import useT from '../../../hooks/useT';
 import ProfileMain from './ProfileMain';
 import ProfileInfo from './ProfileInfo';

@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 
 import MenuItem from './MenuItem';
-import { ReactComponent as CaseIcon } from '../../../assets/case.svg';
+import { ReactComponent as CaseIcon } from '../../assets/case.svg';
 import useT from '../../hooks/useT';
 import theme from '../../lib/theme';
 

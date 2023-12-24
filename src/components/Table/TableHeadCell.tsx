@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 
-import { ReactComponent as ArrowIcon } from '../../../assets/arrow-narrow-down.svg';
+import { ReactComponent as ArrowIcon } from '../../assets/arrow-narrow-down.svg';
 import { SortDirection } from '../../lib/types';
 import theme from '../../lib/theme';
 
