@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { ReactComponent as SearchIcon } from '../../assets/search-circle.svg';
+import { ReactComponent as SearchIcon } from '../../../assets/search-circle.svg';
 import useT from '../../hooks/useT';
 import SearchLabel from './SearchLabel';
 import SearchInput from './SearchInput';

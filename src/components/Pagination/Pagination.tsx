@@ -1,8 +1,8 @@
 import React from 'react';
 
 import PaginationItem from './PaginationItem';
-import { ReactComponent as ArrowLeftIcon } from '../../assets/arrow-narrow-left.svg';
-import { ReactComponent as ArrowRightIcon } from '../../assets/arrow-narrow-right.svg';
+import { ReactComponent as ArrowLeftIcon } from '../../../assets/arrow-narrow-left.svg';
+import { ReactComponent as ArrowRightIcon } from '../../../assets/arrow-narrow-right.svg';
 import { createPagination } from '../../lib/functions';
 import useT from '../../hooks/useT';
 import PaginationContainer from './PaginationContainer';

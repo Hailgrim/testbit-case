@@ -1,7 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans&display=swap');
 
 :root {
-  font-size: 10px;
   --color-black: #0E0C15;
   --color-black2: #000000;
   --color-white: #FFFFFF;
@@ -14,6 +13,8 @@
   --color-blue2: #1C64F2;
   --color-red: #FE4242;
   --color-green: #1ABB34;
+  font-size: 10px;
+  color-scheme: dark;
 }
 
 body {
