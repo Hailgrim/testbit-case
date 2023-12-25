@@ -4,7 +4,6 @@ const DrawerBody = styled.div<{ $loading?: boolean }>`
   position: relative;
   flex-grow: 1;
   overflow: auto;
-  overscroll-behavior: contain;
   & > * {
     opacity: ${(props) => (props.$loading ? 0 : 1)};
     transition: opacity ease-out 0.2s;

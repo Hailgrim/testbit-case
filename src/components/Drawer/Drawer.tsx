@@ -25,8 +25,14 @@ const DrawerComponent: React.FC<IModal> = ({
   React.useEffect(() => {
     clearTimeout(timeout.current);
     if (open === true) {
+      document.body.style.paddingRight = `${
+        window.innerWidth - document.body.clientWidth
+      }px`;
+      document.body.style.overflow = 'hidden';
       setShow(true);
     } else {
+      document.body.style.paddingRight = '';
+      document.body.style.overflow = '';
       timeout.current = setTimeout(() => setShow(false), 200);
     }
   }, [open]);

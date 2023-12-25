@@ -12,7 +12,6 @@ const DrawerHeader = styled.div`
   }
   ${theme.media.lg} {
     margin-top: 3.1rem;
-    margin-right: 0.5rem;
   }
 `;
 export default DrawerHeader;

@@ -20,45 +20,43 @@ const Pagination: React.FC<{
   const t = useT();
 
   return (
-    <PaginationContainer>
-      {!tiny && (
-        <PaginationItem
-          $hide={current < 2}
-          onClick={() => onPageChange && onPageChange(current - 1)}
-          disabled={current < 2}
-          title={t.previous}
-        >
-          <ArrowLeftIcon />
-        </PaginationItem>
+    <>
+      {quantity > 1 && (
+        <PaginationContainer>
+          {!tiny && (
+            <PaginationItem
+              $hide={current < 2}
+              onClick={() => onPageChange && onPageChange(current - 1)}
+              disabled={current < 2}
+              title={t.previous}
+            >
+              <ArrowLeftIcon />
+            </PaginationItem>
+          )}
+          {pages.map((page) => (
+            <PaginationItem
+              key={page.value}
+              $active={page.value === current}
+              onClick={() => onPageChange && onPageChange(page.value)}
+              disabled={current === page.value}
+              title={String(page.value)}
+            >
+              {page.key}
+            </PaginationItem>
+          ))}
+          {!tiny && (
+            <PaginationItem
+              $hide={current >= quantity}
+              onClick={() => onPageChange && onPageChange(current + 1)}
+              disabled={current >= quantity}
+              title={t.next}
+            >
+              <ArrowRightIcon />
+            </PaginationItem>
+          )}
+        </PaginationContainer>
       )}
-      {quantity > 1 ? (
-        pages.map((page) => (
-          <PaginationItem
-            key={page.value}
-            $active={page.value === current}
-            onClick={() => onPageChange && onPageChange(page.value)}
-            disabled={current === page.value}
-            title={String(page.value)}
-          >
-            {page.key}
-          </PaginationItem>
-        ))
-      ) : (
-        <PaginationItem $hide disabled>
-          &nbsp;
-        </PaginationItem>
-      )}
-      {!tiny && (
-        <PaginationItem
-          $hide={current >= quantity}
-          onClick={() => onPageChange && onPageChange(current + 1)}
-          disabled={current >= quantity}
-          title={t.next}
-        >
-          <ArrowRightIcon />
-        </PaginationItem>
-      )}
-    </PaginationContainer>
+    </>
   );
 };
 export default Pagination;

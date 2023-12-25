@@ -10,9 +10,9 @@ const DrawerContent = styled.div<{ $open?: boolean }>`
   height: 100%;
   background-color: var(--color-gray);
   color: var(--color-white);
-  padding-inline: 1.6rem;
   display: flex;
   flex-direction: column;
+  margin-right: calc(100% - 100vw);
   transform: translateX(${(props) => (props.$open ? '0%' : '100%')});
   animation: ${(props) =>
       props.$open ? 'slide-left-open' : 'slide-left-close'}
@@ -33,12 +33,19 @@ const DrawerContent = styled.div<{ $open?: boolean }>`
       transform: translateX(100%);
     }
   }
+  & > * {
+    padding-inline: 1.6rem;
+  }
   ${theme.media.md} {
     max-width: 470px;
-    padding-inline: 2rem 4rem;
+    & > * {
+      padding-inline: 2rem 4rem;
+    }
   }
   ${theme.media.lg} {
-    padding-inline: 2rem;
+    & > * {
+      padding-inline: 2rem;
+    }
   }
 `;
 export default DrawerContent;
