@@ -6,7 +6,6 @@ const PaginationContainer = styled.div`
   justify-content: center;
   align-items: center;
   flex-wrap: wrap;
-  margin-block: 2.4rem;
   & > * + * {
     margin-left: 0.4rem;
   }

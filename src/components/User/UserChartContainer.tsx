@@ -6,13 +6,6 @@ const UserChartContainer = styled.div`
   width: 100%;
   height: 350px;
   overflow: hidden;
-  margin-bottom: 1.5rem;
-  ${theme.media.md} {
-    margin-bottom: 1.9rem;
-  }
-  ${theme.media.lg} {
-    margin-bottom: 2.1rem;
-  }
   & .transactions {
     & .recharts-brush {
       & > rect:first-child {

@@ -6,12 +6,9 @@ const DrawerHeader = styled.div`
   display: flex;
   flex-direction: row;
   align-items: center;
-  margin-top: 3rem;
+  padding-block: 1.6rem;
   ${theme.media.md} {
-    margin-top: 5.6rem;
-  }
-  ${theme.media.lg} {
-    margin-top: 3.1rem;
+    padding-block: 2rem;
   }
 `;
 export default DrawerHeader;

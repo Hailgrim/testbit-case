@@ -1,10 +1,11 @@
 import { createApi, fetchBaseQuery } from '@reduxjs/toolkit/query/react';
+
 import { ITransaction, IReqListParams, IResList, IUser } from '../../lib/types';
 
 const usersApi = createApi({
   reducerPath: 'usersApi',
   baseQuery: fetchBaseQuery({
-    baseUrl: 'https://test.gefara.xyz/api/v1/',
+    baseUrl: '/api/',
   }),
   tagTypes: ['Users', 'User'],
   endpoints: (builder) => ({

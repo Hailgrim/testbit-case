@@ -95,7 +95,7 @@ const UserOperations: React.FC<{
             formatter={() => user.email}
             wrapperStyle={{
               width: '85%',
-              paddingTop: 12,
+              paddingTop: 10,
             }}
           />
           <defs>

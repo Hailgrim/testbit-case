@@ -25,7 +25,4 @@ export default function Table<T>({
 
 const TableContainer = styled.div`
   overflow: auto;
-  &:last-child {
-    margin-bottom: 2rem;
-  }
 `;

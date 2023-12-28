@@ -39,11 +39,6 @@ const DrawerContent = styled.div<{ $open?: boolean }>`
   ${theme.media.md} {
     max-width: 470px;
     & > * {
-      padding-inline: 2rem 4rem;
-    }
-  }
-  ${theme.media.lg} {
-    & > * {
       padding-inline: 2rem;
     }
   }

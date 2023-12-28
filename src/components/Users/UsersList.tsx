@@ -44,6 +44,7 @@ const UsersList: React.FC<{
         quantity={getUsersReq.data?.pages}
         current={page}
         onPageChange={setPage}
+        tiny
       />
     </>
   );

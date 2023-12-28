@@ -9,12 +9,26 @@ const Content = styled.main`
   flex-grow: 1;
   & > * {
     margin-inline: 1.6rem;
+    margin-bottom: 1.8rem;
+    & + * {
+      margin-top: 0;
+    }
+    &:first-child {
+      margin-top: 1.8rem;
+    }
   }
   ${theme.media.md} {
     border-radius: 1.8rem;
     margin: 0 4rem 3.4rem 4rem;
     & > * {
       margin-inline: 2.4rem;
+      margin-bottom: 2.4rem;
+      & + * {
+        margin-top: 0;
+      }
+      &:first-child {
+        margin-top: 2.4rem;
+      }
     }
   }
   ${theme.media.lg} {
