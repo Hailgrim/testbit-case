@@ -8,15 +8,17 @@ const ProfileMain = styled.div`
   border-radius: 0.6rem;
   border: 0.1rem solid var(--color-gray2);
   display: none;
-  flex-direction: row;
+  grid-template-areas: 'avatar status' 'avatar name';
+  grid-template-columns: 3.2rem 1fr;
+  gap: 0 1.2rem;
   align-items: center;
+  height: 100%;
   & > svg {
-    width: 3.2rem;
-    height: 3.2rem;
-    margin-right: 1.2rem;
+    width: 100%;
+    grid-area: avatar;
   }
   ${theme.media.md} {
-    display: flex;
+    display: grid;
   }
 `;
 export default ProfileMain;
