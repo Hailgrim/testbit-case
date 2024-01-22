@@ -1,0 +1,9 @@
+export { ReactComponent as ArrowDownIcon } from './arrow-narrow-down.svg';
+export { ReactComponent as ArrowLeftIcon } from './arrow-narrow-left.svg';
+export { ReactComponent as ArrowRightIcon } from './arrow-narrow-right.svg';
+export { ReactComponent as CaseIcon } from './case.svg';
+export { ReactComponent as CloseIcon } from './close.svg';
+export { ReactComponent as AvatarIcon } from './default-avatar.svg';
+export { ReactComponent as EditIcon } from './edit.svg';
+export { ReactComponent as SearchIcon } from './search-circle.svg';
+export { ReactComponent as TrashIcon } from './trash.svg';

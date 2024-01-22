@@ -1,28 +1,19 @@
-import React from 'react';
+import { StrictMode } from 'react';
 import ReactDOM from 'react-dom/client';
-import { Provider } from 'react-redux';
 
-import './index.css';
-import App from './App';
 import reportWebVitals from './reportWebVitals';
-import store from './store/store';
-
-async function enableMocking() {
-  const { worker } = await import('./data/server');
-  return worker.start({ onUnhandledRequest: 'bypass' });
-}
+import { startMockServer } from './shared/server';
+import App from './app';
 
 const root = ReactDOM.createRoot(
   document.getElementById('root') as HTMLElement
 );
 
-enableMocking().then(() => {
+startMockServer().then(() => {
   root.render(
-    <React.StrictMode>
-      <Provider store={store}>
-        <App />
-      </Provider>
-    </React.StrictMode>
+    <StrictMode>
+      <App />
+    </StrictMode>
   );
 });
 
