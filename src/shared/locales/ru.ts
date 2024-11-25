@@ -17,7 +17,7 @@ export const ru = {
   delete: 'Удалить',
   close: 'Закрыть',
   tokensUsage: 'Использование токенов',
-  operationsHistory: 'История операция',
+  operationsHistory: 'История операций',
   type: 'Тип',
   date: 'Дата',
   sum: 'Сумма',
